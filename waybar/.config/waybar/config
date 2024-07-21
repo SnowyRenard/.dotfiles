@@ -1,0 +1,32 @@
+{
+  // General settings
+  "reload_style_on_change": true,
+
+  // Position
+  "layer": "top",
+  "margin-top": 5,
+  "margin-bottom": -5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 0,
+
+  // Load modules
+  "include": ["~/.config/Arch/Bar/Waybar/modules.json"],
+
+  "modules-left": [ 
+    "hyprland/workspaces"
+    ],
+
+  // "modules-center": [ 
+  //   "hyprland/window"
+  // ],
+
+  "modules-right": [
+    "backlight",
+    "battery",
+    "pulseaudio", 
+    "network",
+    "clock",
+    "tray",
+  ],
+}

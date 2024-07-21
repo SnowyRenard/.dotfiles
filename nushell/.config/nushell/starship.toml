@@ -1,0 +1,6 @@
+add_newline = false
+
+[cmd_duration]
+min_time = 0
+format = " took [$duration]($style)"
+show_milliseconds = "i"

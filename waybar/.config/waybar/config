@@ -11,7 +11,7 @@
   "spacing": 0,
 
   // Load modules
-  "include": ["~/.config/Arch/Bar/Waybar/modules.json"],
+  "include": ["~/.config/waybar/modules.json"],
 
   "modules-left": [ 
     "hyprland/workspaces"

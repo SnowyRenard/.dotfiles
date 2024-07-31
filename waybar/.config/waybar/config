@@ -1,6 +1,6 @@
 {
   // General settings
-  "reload_style_on_change": true,
+  // "reload_style_on_change": true,
 
   // Position
   "layer": "top",
@@ -17,9 +17,9 @@
     "hyprland/workspaces"
     ],
 
-  // "modules-center": [ 
-  //   "hyprland/window"
-  // ],
+  "modules-center": [ 
+    "hyprland/window"
+  ],
 
   "modules-right": [
     "backlight",

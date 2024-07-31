@@ -63,7 +63,7 @@ window#waybar {
   margin: 5px 15px 5px 0px;
   padding: 2px 10px 0px 10px;
   border-radius: 12px;
-  color: @highight;
+  color: @highlight;
   font-size:16px;
   font-weight: normal;
   opacity: 0.8;

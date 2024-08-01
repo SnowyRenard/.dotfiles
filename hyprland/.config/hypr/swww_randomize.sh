@@ -19,12 +19,16 @@ while true; do
 	done \
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
+
+			killall waybar &
 			
 			magick "$img" -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp &
 
 			swww img "$img" &
 
-			wallust run "$img" -d ~/.config/wallust/
+			wallust run "$img" --quiet -d ~/.config/wallust/
+
+			waybar
 
 			sleep $INTERVAL
 		done

@@ -36,6 +36,7 @@
     "format": "{icon}",
     "format-icons": [ "", "", "", "", "", "", "", "", "", ],
     "format-alt": "{percent}% {icon}",
+    "scroll-step": 5,
     "tooltip": false,
   },
 

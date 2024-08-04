@@ -10,7 +10,7 @@ if [[ $# -lt 1 ]] || [[ ! -d $1 ]]; then
 fi
 
 # This controls (in seconds) when to switch to the next image
-INTERVAL=300
+INTERVAL="$2"
 
 while true; do
 	find "$1" \
@@ -28,7 +28,7 @@ while true; do
 
 			wallust run "$img" --quiet -d ~/.config/wallust/
 
-			waybar
+			waybar &
 
 			sleep $INTERVAL
 		done

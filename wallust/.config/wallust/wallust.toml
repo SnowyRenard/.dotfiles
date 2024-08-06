@@ -22,6 +22,6 @@ check_contrast = true
 alpha = 75
 
 [templates]
-dir.template = "templates/"
+dir.template = ""
 dir.target = "~/.cache/wallust"
 dir.pywal = true

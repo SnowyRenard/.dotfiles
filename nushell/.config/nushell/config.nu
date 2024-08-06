@@ -18,7 +18,7 @@ alias nano = hx
 
 #alias icat = kitty +kitten icat
 # alias icat = img2sixel -I
-alias icat = meh
+alias icat = feh
 
 alias music = ncspot
 

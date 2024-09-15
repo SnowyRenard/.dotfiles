@@ -27,18 +27,15 @@ source ~/.zoxide.nu # zoxide init nushell | save -f ~/.zoxide.nu
 use ~/.cache/starship/init.nu # starship  init | save ~/.cache/starship/init.nu
 $env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
 
-# Fish auto complete
-let fish_completer = {|spans|
-    fish --command $'complete "--do-complete=($spans | str join " ")"'
-    | $"value(char tab)description(char newline)" + $in
-    | from tsv --flexible --no-infer
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell ...$spans | from json
 }
 
 $env.config = {
   completions: {
     external: {
       enable: true
-      completer: $fish_completer
+      completer: $carapace_completer
     }
   }
 }

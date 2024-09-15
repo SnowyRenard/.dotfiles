@@ -16,15 +16,29 @@ alias vi = hx
 alias vim = hx
 alias nano = hx
 
-#alias icat = kitty +kitten icat
-# alias icat = img2sixel -I
-alias icat = feh
+alias icat = img2sixel -I
 
-alias music = ncspot
+alias web = w3m -sixel
 
 alias pvpnc = do {launch nm-applet; protonvpn-cli c}
 alias pvpnd = do {protonvpn-cli d;pkill nm-applet}
 
 source ~/.zoxide.nu # zoxide init nushell | save -f ~/.zoxide.nu
-# use ~/.cache/starship/init.nu
-# $env.STARSHIP_CONFIG = '~/.config/Arch/Shell/Nu/starship.toml'
+use ~/.cache/starship/init.nu # starship  init | save ~/.cache/starship/init.nu
+$env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
+
+# Fish auto complete
+let fish_completer = {|spans|
+    fish --command $'complete "--do-complete=($spans | str join " ")"'
+    | $"value(char tab)description(char newline)" + $in
+    | from tsv --flexible --no-infer
+}
+
+$env.config = {
+  completions: {
+    external: {
+      enable: true
+      completer: $fish_completer
+    }
+  }
+}

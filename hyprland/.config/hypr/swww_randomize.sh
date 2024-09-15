@@ -13,7 +13,7 @@ fi
 INTERVAL="$2"
 
 while true; do
-	if ! pgrep -x "gameoverlayui" > /dev/null
+	if ! pgrep -x "steam" > /dev/null
 	then
 		find "$1" \
 			| while read -r img; do

@@ -13,22 +13,22 @@ fi
 INTERVAL="$2"
 
 while true; do
-	if ! pgrep -x "steam" > /dev/null
+	if ! pgrep -x "steam" > /dev/null # disable update if steam is enabled
 	then
-		find "$1" \
+		find "$1" \ # find an image in current directory
 			| while read -r img; do
-				echo "$((RANDOM % 1000)):$img"
+				echo "$((RANDOM % 1000)):$img" # select random image
 		done \
 			| sort -n | cut -d':' -f2- \
 			| while read -r img; do
 	
-				killall waybar &
+				killall waybar & 
 				
-				magick "$img" -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp &
+				magick "$img" -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp & # generate image for rofi
 	
-				swww img "$img" &
+				swww img "$img" & # change background
 	
-				wallust run "$img" --quiet -d ~/.config/wallust/
+				wallust run "$img" --quiet -d ~/.config/wallust/ # generate all the colors
 	
 				waybar &
 	

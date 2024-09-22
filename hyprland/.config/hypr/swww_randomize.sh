@@ -13,26 +13,25 @@ fi
 INTERVAL="$2"
 
 while true; do
-	if ! pgrep -x "steam" > /dev/null
-	then
-		find "$1" \
-			| while read -r img; do
-				echo "$((RANDOM % 1000)):$img"
-		done \
-			| sort -n | cut -d':' -f2- \
-			| while read -r img; do
-	
-				killall waybar &
-				
+	find "$1" \
+		| while read -r img; do
+			echo "$((RANDOM % 1000)):$img"
+	done \
+		| sort -n | cut -d':' -f2- \
+		| while read -r img; do
+			if ! pgrep -x "gameoverlayui" > /dev/null
+			then	
+				killall waybar
+
+ 				wallust run "$img" --quiet -d ~/.config/wallust/ &
+
 				magick "$img" -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp &
 	
 				swww img "$img" &
 	
-				wallust run "$img" --quiet -d ~/.config/wallust/
-	
 				waybar &
+			fi
 	
-				sleep $INTERVAL
-			done
-	fi
+			sleep $INTERVAL
+		done
 done

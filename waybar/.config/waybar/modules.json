@@ -58,7 +58,7 @@
     "format-wifi": "",
     "format-ethernet": "",
     "format-alt": "{signalStrength}% ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-disconnected": "",
     "tooltip-format-wifi": "{essid}",
     "tooltip": false,
   },

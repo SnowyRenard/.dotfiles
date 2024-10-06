@@ -16,7 +16,7 @@ alias vi = hx
 alias vim = hx
 alias nano = hx
 
-alias icat = img2sixel -I
+alias icat = meh
 
 alias web = w3m -sixel
 

@@ -2,7 +2,7 @@
 @define-color hightlight @color10;
 @define-color background #FFFFFF;
 
-@define-color cc-bg rgba(255, 255, 255, 0.7);
+@define-color cc-bg rgb(25, 25, 25);
 @define-color noti-border-color rgba(55, 55, 55, 0.15);
 @define-color noti-bg rgba(55, 55, 55, 0.8);
 @define-color noti-bg-opaque rgb(55, 55, 55);

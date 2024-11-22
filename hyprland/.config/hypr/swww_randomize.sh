@@ -18,12 +18,12 @@ while true; do
 			echo "$((RANDOM % 1000)):$img"
 	done \
 		| sort -n | cut -d':' -f2- \
-		| while read -r img; do
+	| while read -r img; do
 			if ! pgrep -x "gameoverlayui" > /dev/null
 			then	
 				killall waybar
 
- 				wallust run "$img" --quiet -d ~/.config/wallust/ &
+ 				wallust run "$img" --quiet -s -d ~/.config/wallust/ &
 
 				magick "$img" -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp &
 	

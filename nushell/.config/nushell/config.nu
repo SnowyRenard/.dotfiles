@@ -2,7 +2,7 @@ $env.config = {
   show_banner: false,
 }
 
-cat ~/.cache/wallust/sequences
+# cat ~/.cache/wallust/sequences
 
 alias fetch = fastfetch
 alias launch = ~/.config/nushell/launch

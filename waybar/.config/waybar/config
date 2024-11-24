@@ -23,12 +23,10 @@
 
   "modules-right": [
     "backlight",
-    // "backlight/slider",
     "battery",
     "pulseaudio", 
     "network",
     "clock",
     "tray",
-    "custom/notification",
   ],
 }

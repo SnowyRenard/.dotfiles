@@ -1,4 +1,4 @@
-#bin/sh
+#!bin/sh
 
 while true; do
   state="$(cat /sys/class/power_supply/BAT*/status)"

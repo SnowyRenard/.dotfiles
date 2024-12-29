@@ -24,7 +24,7 @@ alias pvpnc = do {launch nm-applet; protonvpn-cli c}
 alias pvpnd = do {protonvpn-cli d;pkill nm-applet}
 
 source ~/.zoxide.nu # zoxide init nushell | save -f ~/.zoxide.nu
-use ~/.cache/starship/init.nu # starship  init | save ~/.cache/starship/init.nu
+use ~/.cache/starship/init.nu # starship  init nu | save ~/.cache/starship/init.nu
 $env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
 
 let carapace_completer = {|spans|

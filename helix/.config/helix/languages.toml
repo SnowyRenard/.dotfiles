@@ -1,0 +1,7 @@
+[[language]]
+name = "markdown"
+language-servers = [{name = "ltex"}, {name= "marksman"}]
+
+[language-server.ltex]
+command = "/bin/ltex-ls"
+

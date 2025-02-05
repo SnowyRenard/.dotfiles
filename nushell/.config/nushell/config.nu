@@ -15,9 +15,6 @@ $env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
 #########################
 alias clr = clear
 
-alias grep = rg
-
-alias cat = bat
 # alias icat = meh
 
 alias hx = helix

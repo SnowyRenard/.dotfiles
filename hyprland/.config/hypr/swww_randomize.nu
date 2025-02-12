@@ -5,7 +5,7 @@
 
 def main [dir, time: int] {
   loop {
-    if (ps | select name | find  wineserver ffxiv_dx11.exe | is-empty) {
+    if (ps | select name | find  wineserver ffxiv_dx11.exe | is-empty) { # Check if certain processes are running. To add to this list just add the name after find.
       let file = (select_file $dir) 
 
       update_colors ($file.name | get 0 )
@@ -26,7 +26,7 @@ def update_colors [img: string] {
 
 	  swww img $img 
 
-	  ~/.dotfiles/nushell/.config/nushell/launch waybar # Cause waybar keeps control over the process launch it
+	  ~/.dotfiles/nushell/.config/nushell/launch waybar # Cause waybar keeps control over the process launch it in a child process through sh
   }
 }
 

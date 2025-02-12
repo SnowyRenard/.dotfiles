@@ -10,9 +10,9 @@ def main [dir, time: int] {
 
       update_colors ($file.name | get 0 )
     }
-  }
 
   sleep ($time | into duration --unit sec) # Because the input is currently an integer conversion is required
+  }
 }
 
 # Update the environment based upon the path to an image

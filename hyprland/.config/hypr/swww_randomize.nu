@@ -17,15 +17,17 @@ def main [dir, time: int] {
 
 # Update the environment based upon the path to an image
 def update_colors [img: string] {  
-  killall waybar | ignore
+  do --ignore-errors {
+    killall waybar
 
-  wallust run $img --quiet -s -d ~/.config/wallust
+    wallust run $img --quiet -s -d ~/.config/wallust
 
-	magick $img -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp 
+	  magick $img -gravity Center -extent 1.005:1 ~/.cache/rofi.bmp 
 
-	swww img $img 
+	  swww img $img 
 
-	~/.dotfiles/nushell/.config/nushell/launch waybar | ignore # Cause waybar keeps control over the process launch it in a child process through sh
+	  ~/.dotfiles/nushell/.config/nushell/launch waybar | ignore # Cause waybar keeps control over the process launch it in a child process through sh
+  }
 }
 
 # Select a random file within a directory

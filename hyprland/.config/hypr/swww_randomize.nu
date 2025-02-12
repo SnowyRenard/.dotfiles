@@ -5,12 +5,14 @@
 
 def main [dir, time: int] {
   loop {
-    let file = (select_file $dir) 
+    if (ps | select name | find  wineserver ffxiv_dx11.exe | is-empty) {
+      let file = (select_file $dir) 
 
-    update_colors ($file.name | get 0 )
-    
-    sleep ($time | into duration --unit sec) # Because the input is currently an integer conversion is required
+      update_colors ($file.name | get 0 )
+    }
   }
+
+  sleep ($time | into duration --unit sec) # Because the input is currently an integer conversion is required
 }
 
 # Update the environment based upon the path to an image
@@ -24,7 +26,7 @@ def update_colors [img: string] {
 
 	  swww img $img 
 
-	  ~/.config/nushell/launch waybar
+	  ~/.dotfiles/nushell/.config/nushell/launch waybar # Cause waybar keeps control over the process launch it
   }
 }
 

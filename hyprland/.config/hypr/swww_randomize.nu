@@ -26,7 +26,7 @@ def update_colors [img: string] {
 
 	  swww img $img 
 
-	  ~/.dotfiles/nushell/.config/nushell/launch waybar # Cause waybar keeps control over the process launch it in a child process through sh
+	  ~/.dotfiles/nushell/.config/nushell/launch waybar | ignore # Cause waybar keeps control over the process launch it in a child process through sh
   }
 }
 

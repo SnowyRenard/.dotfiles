@@ -19,7 +19,7 @@ while true; do
 	done \
 		| sort -n | cut -d':' -f2- \
 	| while read -r img; do
-			if [ ! pgrep -x "gameoverlayui" > /dev/null ] || [ ! pgrep -x "ffxiv_dx11.exe" > /dev/null ]
+			if ( ! pgrep -x "gameoverlayui" > /dev/null ) || ( ! pgrep -x "ffxiv_dx11.exe" > /dev/null )
 			then	
 				killall waybar
 

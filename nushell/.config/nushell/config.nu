@@ -22,6 +22,9 @@ alias vi = hx
 alias vim = hx
 alias nano = hx
 
+alias pvpnc = do { ~/.config/nushell/launch nm-applet ; ~/.config/nushell/launch protonvpn-app }
+alias pvpnd = do { pkill nm-applet ; pkill protonvpn-app }
+
 source ~/.zoxide.nu # zoxide init nushell | save -f ~/.zoxide.nu
 
 alias fetch = fastfetch

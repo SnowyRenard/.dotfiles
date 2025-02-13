@@ -1,32 +1,40 @@
+################
+## Shell Rice ##
+################
 $env.config = {
   show_banner: false,
 }
 
-cat ~/.cache/wallust/sequences
+use ~/.cache/starship/init.nu # starship  init nu | save ~/.cache/starship/init.nu
+$env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
 
-alias fetch = fastfetch
-alias launch = ~/.config/nushell/launch
+# cat ~/.cache/wallust/sequences
 
-alias useless = do { pacman -Qqd | pacman -Rsu --print - }
-
+#########################
+## Command Replacments ##
+#########################
 alias clr = clear
+
+# alias icat = meh
 
 alias hx = helix
 alias vi = hx
 alias vim = hx
 alias nano = hx
 
-alias icat = meh
-
-alias web = w3m -sixel
-
-alias pvpnc = do {launch nm-applet; protonvpn-cli c}
-alias pvpnd = do {protonvpn-cli d;pkill nm-applet}
+alias pvpnc = do { ~/.config/nushell/launch nm-applet ; ~/.config/nushell/launch protonvpn-app }
+alias pvpnd = do { pkill nm-applet ; pkill protonvpn-app }
 
 source ~/.zoxide.nu # zoxide init nushell | save -f ~/.zoxide.nu
-use ~/.cache/starship/init.nu # starship  init | save ~/.cache/starship/init.nu
-$env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
 
+alias fetch = fastfetch
+alias launch = ~/.config/nushell/launch
+
+alias useless = do { pacman -Qqd | pacman -Rsu --print - }
+
+########################
+## Command Completion ##
+########################
 let carapace_completer = {|spans|
     carapace $spans.0 nushell ...$spans | from json
 }

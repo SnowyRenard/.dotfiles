@@ -1,0 +1,11 @@
+[[language]]
+name = "markdown"
+language-servers = [{name = "ltex"}, {name = "mdpls"}]
+
+[language-server.ltex]
+command = "/bin/ltex-ls"
+
+
+[language-server.mdpls]
+command = "/bin/mdpls"
+config = { markdown.preview.auto = true, markdown.preview.browser = "firefox"}

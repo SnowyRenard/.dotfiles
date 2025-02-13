@@ -5,8 +5,10 @@ $env.config = {
   show_banner: false,
 }
 
-use ~/.cache/starship/init.nu # starship  init nu | save ~/.cache/starship/init.nu
-$env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
+if ("~/.cache/starship/init.nu" | path exists ) {
+  use ~/.cache/starship/init.nu # starship  init nu | save ~/.cache/starship/init.nu
+  $env.STARSHIP_CONFIG = '~/.config/nushell/starship.toml'
+}
 
 # cat ~/.cache/wallust/sequences
 

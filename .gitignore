@@ -2,3 +2,4 @@ ncspot/.config/ncspot/userstate.cbor
 helix/.config/helix/runtime/
 nushell/.config/nushell/history.txt
 nushell/.config/nushell/env.nu
+hyprland/.config/hypr/login.conf

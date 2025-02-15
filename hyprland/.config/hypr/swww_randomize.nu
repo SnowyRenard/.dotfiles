@@ -3,7 +3,7 @@
 # This script will randomly go through the files of a directory, setting it
 # up as the wallpaper at regular intervals
 
-def main [dir, time: int] {
+def main [dir: path, time: int] {
   loop {
     if (ps | select name | find  wineserver ffxiv_dx11.exe | is-empty) { # Check if certain processes are running. To add to this list just add the name after find.
       let file = (select_file $dir) 
@@ -17,7 +17,7 @@ def main [dir, time: int] {
 
 
 # Update the environment based upon the path to an image
-def update_colors [img: string] {  
+def update_colors [img: path] {  
   [
     (killall waybar | ignore ; ~/.dotfiles/nushell/.config/nushell/launch waybar | ignore ), # Cause waybar keeps control over the process launch it in a child process through sh
     (wallust run $img --quiet -s -d ~/.config/wallust | ignore),
@@ -27,7 +27,7 @@ def update_colors [img: string] {
 }
 
 # Select a random file within a directory
-def select_file [dir] {
+def select_file [dir: path] {
   
   let input_dir = ($"($dir)/**/*" | into glob) # glob is required to format because magic?
 

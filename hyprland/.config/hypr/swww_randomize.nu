@@ -5,7 +5,7 @@
 
 def main [dir: path, time: int] {
   loop {
-    if (ps | select name | find  wineserver ffxiv_dx11.exe | is-empty) { # Check if certain processes are running. To add to this list just add the name after find.
+    if (ps | select name | find  wineserver ffxiv_dx11.exe | is-empty) and (hyprctl clients -j | from json | get fullscreen | all {$in == 0}) { # Check if certain processes are running. To add to this list just add the name after find.
       let file = (select_file $dir) 
 
       update_colors ($file.name | get 0 )

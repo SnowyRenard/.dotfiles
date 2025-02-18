@@ -27,7 +27,11 @@ alias nano = hx
 alias pvpnc = do { ~/.config/nushell/launch nm-applet ; ~/.config/nushell/launch protonvpn-app }
 alias pvpnd = do { pkill nm-applet ; pkill protonvpn-app }
 
-source ~/.zoxide.nu # zoxide init nushell | save -f ~/.zoxide.nu
+if ("~/.zoxide.nu" | path exists) {
+  source ~/.zoxide.nu
+} else {
+  zoxide init nushell | save -f ~/.zoxide.nu | ignore
+}
 
 alias fetch = fastfetch
 alias launch = ~/.config/nushell/launch

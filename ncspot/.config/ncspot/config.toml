@@ -1,7 +1,6 @@
 use_nerdfont = true
 
 [theme]
-background = "black"
 primary = "light white"
 secondary = "light black"
 title = "green"

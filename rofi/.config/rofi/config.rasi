@@ -3,7 +3,6 @@
 configuration {
 	modi: "drun";
     show-icons: true;
-    terminal: "footclient";
 }
 
 // Global Properties //

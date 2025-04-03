@@ -17,7 +17,7 @@ if ("~/.cache/starship/init.nu" | path exists ) {
 #########################
 alias clr = clear
 
-alias icat = kitten icat
+# alias icat = meh
 
 alias hx = helix
 alias vi = hx

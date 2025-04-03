@@ -28,5 +28,6 @@
     "network",
     "clock",
     "tray",
+    "custom/notification"
   ],
 }

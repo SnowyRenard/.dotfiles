@@ -28,7 +28,7 @@
   "tray": { "spacing": 10, },
 
   "clock": {
-    "format-alt": "{:%Y年 %m月 %d日}",
+    "format-alt": "{:%m月%d日}",
     "tooltip": false,
   },
 

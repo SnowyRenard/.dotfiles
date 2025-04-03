@@ -1,11 +1,15 @@
 [[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "harper"]
+
+[[language]]
 name = "markdown"
-language-servers = [{name = "ltex"}, {name = "mdpls"}]
+language-servers = ["harper", "mdpls"]
 
-[language-server.ltex]
-command = "/bin/ltex-ls"
-
+[language-server.harper]
+command = "harper-ls"
+args = ["--stdio"]
 
 [language-server.mdpls]
-command = "/bin/mdpls"
+command = "mdpls"
 config = { markdown.preview.auto = true, markdown.preview.browser = "firefox"}

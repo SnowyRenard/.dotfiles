@@ -4,7 +4,7 @@ language-servers = ["rust-analyzer", "harper"]
 
 [[language]]
 name = "markdown"
-language-servers = ["harper", "mdpls"]
+language-servers = ["mdpls", "harper"]
 
 [language-server.harper]
 command = "harper-ls"
@@ -12,4 +12,4 @@ args = ["--stdio"]
 
 [language-server.mdpls]
 command = "mdpls"
-config = { markdown.preview.auto = true, markdown.preview.browser = "firefox"}
+config = { markdown.preview.auto = true, markdown.preview.browser = "zen-browser"}
